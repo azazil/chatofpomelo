@@ -36,6 +36,7 @@ handler.queryEntry = function(msg, session, next) {
 	}
 	// select connector
 	var res = dispatcher.dispatch(uid, connectors);
+	console.warn('new gate connetor!!');
 	next(null, {
 		code: 200,
 		host: res.host,
