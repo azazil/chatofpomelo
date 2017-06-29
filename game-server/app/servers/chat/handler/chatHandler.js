@@ -22,13 +22,9 @@ handler.send = function(msg, session, next) {
 	var rid = session.get('rid');
 	var username = session.uid.split('*')[0];
 	var channelService = this.app.get('channelService');
-	var body = msg;
-	body.id = username;
-
 	var param = {
 		route: 'onChat',
-		body : body,
-		target: msg.target
+		body : msg,
 	};
 	channel = channelService.getChannel(rid, false);
 
